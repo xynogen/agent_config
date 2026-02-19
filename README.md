@@ -7,6 +7,7 @@ A portable, agent-agnostic configuration layer that enforces consistent behaviou
 | Path | Purpose |
 |---|---|
 | `SOP.md` | **System Operating Procedure** — the master system prompt. Defines core rules: no hallucination, no sudo, sequential thinking, response contract, task-mode system, and communication style. |
+| `CHAT.md` | **Conversational Agent Prompt** — a self-contained system prompt for online chat interfaces (ChatGPT, Claude, Gemini, etc.). Enforces user-advocacy, anti-contrarian behaviour, and a structured response format. Under 1500 characters for easy pasting. |
 | `workflows/` | **16 slash-command workflows** — each is a self-contained `.md` directive the agent loads on demand. |
 
 ### Workflows
@@ -135,6 +136,24 @@ Most agents that support a custom system prompt or a project-level markdown cont
 
 1. **System prompt** → paste `SOP.md` content into the agent's system prompt or rules field.
 2. **Workflows** → copy `workflows/*.md` into a directory the agent can read (`.agent/workflows/`, `docs/`, etc.) and reference them in your prompt.
+
+---
+
+### Online Chat (ChatGPT / Claude / Gemini)
+
+`CHAT.md` is designed for **web-based chat interfaces** that accept a custom system prompt or instruction block. It is fully self-contained — no external files needed.
+
+1. Open your preferred chat interface.
+2. Paste the contents of `CHAT.md` into the **system prompt**, **custom instructions**, or **project instructions** field.
+3. Start chatting.
+
+| Platform | Where to paste |
+|---|---|
+| ChatGPT | Settings → Custom Instructions → "What would you like ChatGPT to know?" |
+| Claude (web) | Project Knowledge / System Prompt |
+| Gemini | Gems → Custom Instructions |
+
+> **Note**: `CHAT.md` is kept under 1500 characters to fit within the character limits of most custom instruction fields.
 
 ---
 
